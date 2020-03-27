@@ -17,7 +17,7 @@ export default function Incident(){
     const navigation = useNavigation();
 
     function navigationToDetail(incident){
-        navigation.navigate('Details', incident);
+        navigation.navigate('Details', { incident });
     }
 
     async function loadIncidents(){
