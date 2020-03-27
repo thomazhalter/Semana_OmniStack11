@@ -18,8 +18,8 @@ export default function Logon() {
         try {
             const response = await api.post('sessions', { id });
             
-            localStorage.setItem('ong_id', id);
-            localStorage.setItem('ong_name', response.data.name);
+            localStorage.setItem('ongId', id);
+            localStorage.setItem('ongName', response.data.name);
 
             history.push('/profile');
         } catch (error) {
@@ -34,7 +34,7 @@ export default function Logon() {
 
                 <form onSubmit={handleLogin}>
                     <h1>Faça seu logon</h1>
-                    <input placeholder="Sua Id"/>
+                    <input placeholder="Sua Id" value={id} onChange={e => setId(e.target.value)}/>
                     <button className="button" type="submit">Entrar</button>
 
                     <Link className="back-link" to="/register">

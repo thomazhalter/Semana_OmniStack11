@@ -7,12 +7,11 @@ import './styles.css';
 import logoImg from '../../assets/logo.svg';
 
 export default function Profile(){
+    const ongId = localStorage.getItem('ongId');
+    const ongName = localStorage.getItem('ongName');
     const [incidents, setIncidents] = useState([]);
 
     const history = useHistory();
-
-    const ongId = localStorage.getItem('ong_id');
-    const ongName = localStorage.getItem('ong_name');
 
     useEffect(() => {
         api.get('profile', {
